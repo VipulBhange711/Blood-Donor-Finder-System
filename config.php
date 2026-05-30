@@ -37,6 +37,16 @@ try {
             FOREIGN KEY (user_id) REFERENCES users(id) ON DELETE CASCADE
         )");
         
+        $pdo->exec("CREATE TABLE donations (
+            id INTEGER PRIMARY KEY AUTOINCREMENT,
+            donor_id INTEGER NOT NULL,
+            donation_date DATE NOT NULL,
+            location VARCHAR(100),
+            notes TEXT,
+            created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
+            FOREIGN KEY (donor_id) REFERENCES donors(id) ON DELETE CASCADE
+        )");
+        
         // Insert default admin (password: password)
         $stmt = $pdo->prepare("INSERT INTO users (name, email, password, role) VALUES (?, ?, ?, ?)");
         $stmt->execute(['Admin', 'admin@example.com', '$2y$10$92IXUNpkjO0rOQ5byMi.Ye4oKoEa3Ro9llC/.og/at2.uheWG/igi', 'admin']);

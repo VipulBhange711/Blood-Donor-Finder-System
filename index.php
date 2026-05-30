@@ -30,7 +30,8 @@
                         <?php if ($_SESSION['user_role'] === 'admin'): ?>
                             <a href="admin.php" class="bg-white text-red-600 px-4 py-2 rounded font-medium hover:bg-gray-100">Admin Panel</a>
                         <?php else: ?>
-                            <a href="profile.php" class="bg-white text-red-600 px-4 py-2 rounded font-medium hover:bg-gray-100">My Profile</a>
+                            <a href="dashboard.php" class="bg-white text-red-600 px-4 py-2 rounded font-medium hover:bg-gray-100">Dashboard</a>
+                            <a href="profile.php" class="bg-red-800 text-white px-4 py-2 rounded font-medium hover:bg-red-900">Profile</a>
                         <?php endif; ?>
                         <a href="logout.php" class="bg-red-800 px-4 py-2 rounded hover:bg-red-900">Logout</a>
                     <?php else: ?>
